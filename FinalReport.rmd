@@ -46,11 +46,30 @@ From what the Graphical bar shows, the people who are more prone to believe in t
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table1 <- xtabs(~BIGBANG + POSTLIFE,data=GSS)
+rowPerc(table1)
+colPerc(table1)
+```
+  
+From what we can observe from the numerical data we can conclude that the twice as many people who believe in the Big Bang Theory do not believe in the post life.  
+
+
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+The inferential Data shows that the p-value=0.07143 is big enough that we failed to reject the null hypothesis.  
+
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+We can conclude that we failed to reject the null hypothesis as the belief of Big bang and Post life are independent. 
